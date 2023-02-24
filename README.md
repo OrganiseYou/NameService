@@ -23,7 +23,7 @@ $urlFriendlyName = ConvertService::convertNameToId($internalName);
 ## Run tests
 To run the tests, first clone the project to an repository
 ```
-git clone git@github.com:OrganiseYou/NameServiceBundle.git
+git clone git@github.com:OrganiseYou/NameService.git
 ```
 And go to the directory
 ```
