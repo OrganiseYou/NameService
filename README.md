@@ -27,7 +27,7 @@ git clone git@github.com:OrganiseYou/NameService.git
 ```
 And go to the directory
 ```
-cd NameServiceBundle
+cd NameService
 ```
 Run composer install
 ```
