@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/../vendor/autoload.php');
+
 use Organiseyou\NameService\ConvertService;
 use PHPUnit\Framework\TestCase;
 
