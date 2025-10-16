@@ -34,4 +34,25 @@ class ConvertService
 
         return strtoupper($string);
     }
+
+    /**
+     * Converts a string to CamelCase notation.
+     *
+     * @param string $string The input string to convert.
+     * @return string The CamelCase string.
+     */
+    public static function toCamelCase(string $string): string
+    {
+        // Replace underscores, hyphens, and spaces with a space for word separation
+        $string = preg_replace('/[_\-\s]+/', ' ', $string);
+        // Split into words, capitalize each, then implode
+        $words = explode(' ', trim($string));
+        $camelCase = '';
+        foreach ($words as $word) {
+            if (!empty($word)) {
+                $camelCase .= ucfirst(strtolower($word));
+            }
+        }
+        return $camelCase;
+    }
 }
