@@ -19,6 +19,10 @@ $internalName = Organiseyou\NameService\ConvertService::saveConvert($name);
 ```
 $urlFriendlyName = ConvertService::convertNameToId($internalName);
 ```
+### Convert an internal name to a camelcase name
+```
+$camelCase = ConvertService::toCamelCase($internalName);
+```
 
 ## Run tests
 To run the tests, first clone the project to an repository
