@@ -1,6 +1,6 @@
 <?php
 
-use Organiseyou\NameService\ConvertService;
+use Organiseyou\NameService\Convert as ConvertService;
 use Organiseyou\NameService\Service;
 use PHPUnit\Framework\TestCase;
 
