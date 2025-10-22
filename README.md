@@ -7,11 +7,40 @@ composer req organiseyou/name-service
 ```
 
 ## Usage
-### Convert an name from url to an internal name
+### Use it the service
+```php
+$service = new Service('organise_you');
+
+$capitals = $service->toDatabase();
+//where $value is ORGANISE_YOU
+
+$capitals = $service->toSlug();
+//where $value is organise-you
+
+$capitals = $service->toPascalCase();
+//where $value is OrganiseYou
+
+$capitals = $service->toCamelCase();
+//where $value is organiseYou
+```
+
+#### Overwrite the default transformer
+Sometimes we need to overwrite the default transformer
+```php
+$service = new Service(
+    'organise-you',
+    fn (string $slug) => ConvertService::urlToName($slug)
+);
+
+$value = $service->toDatabase()
+// where $value is ORGANISE_YOU
+```
+### Use the static functions
+#### Convert an name from url to an internal name
 ```
 $internalName = Organiseyou\NameService\ConvertService::urlToName($name);
 ```
-### Convert an friendly written name to an internal name
+#### Convert an friendly written name to an internal name
 ```
 $internalName = Organiseyou\NameService\ConvertService::saveConvert($name);
 ```
@@ -37,3 +66,14 @@ Run composer install
 ```
 php ./vendor/bin/phpunit tests
 ```
+
+## Upgrade v1 to v2
+I did changed the class name, change the use case from
+```php
+use Organiseyou\NameService\ConvertService;
+```
+to
+```php
+use Organiseyou\NameService\Convert as ConvertService;
+```
+And remove ``Organiseyou\NameService`` and it is backwards compatible.
