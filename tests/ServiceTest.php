@@ -57,4 +57,10 @@ class ServiceTest extends TestCase
         $pascalCase = (new Service('Organise You'))->toPascalCase();
         $this->assertEquals('OrganiseYou', $pascalCase);
     }
+
+    public function testToCamelCase()
+    {
+        $camelCase = (new Service('Organise You'))->toCamelCase();
+        $this->assertEquals('organiseYou', $camelCase);
+    }
 }

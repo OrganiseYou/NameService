@@ -56,4 +56,15 @@ class ConvertService
         }
         return $pascalCase;
     }
+
+    /**
+     * Convert a string to camalCase
+     *
+     * @param string $string
+     * @return string
+     */
+    public static function toCamelCase(string $string): string
+    {
+        return lcfirst(self::toPascalCase($string));
+    }
 }

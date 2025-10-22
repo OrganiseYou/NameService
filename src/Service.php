@@ -34,6 +34,6 @@ class Service
 
     public function toCamelCase(): string
     {
-        return '';
+        return ConvertService::toCamelCase($this->internalName);
     }
 }
