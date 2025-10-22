@@ -2,7 +2,7 @@
 
 namespace Organiseyou\NameService;
 
-class ConvertService
+class Convert
 {
     public static function saveConvert($string): string
     {
