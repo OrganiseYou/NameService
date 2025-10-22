@@ -13,13 +13,13 @@ class Service
         if ($transformer) {
             $this->internalName = $transformer($internalName);
         } else {
-            $this->internalName = ConvertService::saveConvert($internalName);
+            $this->internalName = Convert::saveConvert($internalName);
         }
     }
 
     public function toSlug(): string
     {
-        return ConvertService::convertNameToId($this->internalName);
+        return Convert::convertNameToId($this->internalName);
     }
 
     public function toDatabase(): string
@@ -29,11 +29,11 @@ class Service
 
     public function toPascalCase(): string
     {
-        return ConvertService::toPascalCase($this->internalName);
+        return Convert::toPascalCase($this->internalName);
     }
 
     public function toCamelCase(): string
     {
-        return ConvertService::toCamelCase($this->internalName);
+        return Convert::toCamelCase($this->internalName);
     }
 }
