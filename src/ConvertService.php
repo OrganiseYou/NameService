@@ -36,23 +36,24 @@ class ConvertService
     }
 
     /**
-     * Converts a string to CamelCase notation.
+     * Converts a string to Pascal notation.
      *
      * @param string $string The input string to convert.
-     * @return string The CamelCase string.
+     * @return string The PamelCase string.
      */
-    public static function toCamelCase(string $string): string
+    public static function toPascalCase(string $string): string
     {
         // Replace underscores, hyphens, and spaces with a space for word separation
         $string = preg_replace('/[_\-\s]+/', ' ', $string);
+
         // Split into words, capitalize each, then implode
         $words = explode(' ', trim($string));
-        $camelCase = '';
+        $pascalCase = '';
         foreach ($words as $word) {
             if (!empty($word)) {
-                $camelCase .= ucfirst(strtolower($word));
+                $pascalCase .= ucfirst(strtolower($word));
             }
         }
-        return $camelCase;
+        return $pascalCase;
     }
 }

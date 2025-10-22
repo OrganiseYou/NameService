@@ -6,14 +6,20 @@ class Service
 {
     private string $internalName;
 
-    public function __construct(string $internalName)
-    {
-        $this->internalName = ConvertService::saveConvert($internalName);
+    public function __construct(
+        string $internalName,
+        ?callable $transformer = null,
+    ) {
+        if ($transformer) {
+            $this->internalName = $transformer($internalName);
+        } else {
+            $this->internalName = ConvertService::saveConvert($internalName);
+        }
     }
 
     public function toSlug(): string
     {
-        return '';
+        return ConvertService::convertNameToId($this->internalName);
     }
 
     public function toDatabase(): string
@@ -23,7 +29,7 @@ class Service
 
     public function toPascalCase(): string
     {
-        return '';
+        return ConvertService::toPascalCase($this->internalName);
     }
 
     public function toCamelCase(): string
