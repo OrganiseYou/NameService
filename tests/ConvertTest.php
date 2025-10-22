@@ -2,7 +2,7 @@
 
 require_once(__DIR__ . '/../vendor/autoload.php');
 
-use Organiseyou\NameService\ConvertService;
+use Organiseyou\NameService\Convert as ConvertService;
 use PHPUnit\Framework\TestCase;
 
 class ConvertTest extends TestCase

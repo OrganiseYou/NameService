@@ -1,6 +1,6 @@
 <?php
 
-use Organiseyou\NameService\ConvertService;
+use Organiseyou\NameService\Convert as ConvertService;
 use PHPUnit\Framework\TestCase;
 
 class PascalCaseTest extends TestCase
